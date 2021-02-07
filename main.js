@@ -41,84 +41,56 @@ $.ajax({
             for (var j = 0; j < result.covidData.data.length; j++) {
                 if (fullCountryArray[i].properties.iso_a2 === result.covidData.data[j].code) {
                     var cases = result.covidData.data[j].latest_data.confirmed;
+                    var popup = "Country           --> " + result.covidData.data[j].name + "<br>" +
+                    "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
+                    "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
+                    "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
+                    "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
+                    //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
+                    "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %";
+
                     if (cases < 10000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
                             fillColor: '#a2fdc6',
                             weight: 1,
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } else if (cases > 9999 && cases < 50000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
                             fillColor: '#53d38e',
                             weight: 1,
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } else if (cases > 49999 && cases < 200000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
                             fillColor: '##00b363',
                             weight: 1,
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } else if (cases > 199999 && cases < 50000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
                             fillColor: '#006828',
                             weight: 1,
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } else if (cases > 499999 && cases < 1000000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
                             fillColor: '#006828',
                             weight: 1,
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } else if (cases > 999999 && cases < 2500000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
                             fillColor: '#00481c',
                             weight: 1,
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } else if (cases > 2500000) {
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
@@ -126,13 +98,7 @@ $.ajax({
                             fillColor: '#000000',
                             weight: 1,
                             
-                        }).addTo(map).bindPopup("Country           --> " + result.covidData.data[j].name + "<br>" +
-                                                "Cases             --> " + result.covidData.data[j].latest_data.confirmed + "<br>" + 
-                                                "Deaths            --> " + result.covidData.data[j].latest_data.deaths + "<br>" +
-                                                "Death Rate        --> " + result.covidData.data[j].latest_data.calculated.death_rate + " %<br>" +
-                                                "Recovered         --> " + result.covidData.data[j].latest_data.recovered + "<br>" + 
-                                                //"Cases per Million --> " + result.covidData.data[j].latest_data.calculation.cases_per_million_population + "<br>" +
-                                                "Recovery Rate        --> " + result.covidData.data[j].latest_data.calculated.recovery_rate + " %");
+                        }).addTo(map).bindPopup(popup);
                     } 
                     
                 }
