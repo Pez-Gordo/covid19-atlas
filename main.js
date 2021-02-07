@@ -8,7 +8,7 @@ L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=ypfODnzHu
     crossOrigin: true
 }).addTo(map)
 
-map.setZoom(2);
+map.setZoom(2.5);
 
 $.ajax({
 	url: "./geoJson.php",
@@ -37,6 +37,7 @@ $.ajax({
     
     success: function(result) {                    
         console.log('covid info', result)
+        //console.log(fullCountryArray[4])
         for (var i = 0; i < fullCountryArray.length; i++) {
             for (var j = 0; j < result.covidData.data.length; j++) {
                 if (fullCountryArray[i].properties.iso_a2 === result.covidData.data[j].code) {
@@ -113,21 +114,29 @@ $.ajax({
 
 });
 
-/*
+
 var legend = L.control({ position: 'bottomright' });
 
     legend.onAdd = function (map) {
 
-        var div = L.DomUtil.create('div', 'info legend'),
-            magnitudes = [0, 1, 2, 3, 4, 5, 6, 7];
+        var div = L.DomUtil.create('div', 'info legend');
+            //magnitudes = [0, 1, 2, 3, 4, 5, 6, 7];
 
-        for (var i = 0; i < magnitudes.length; i++) {
-            div.innerHTML +=
-                '<i style="background:' + markerColor(magnitudes[i] + 1) + '"></i> ' +
-                + magnitudes[i] + (magnitudes[i + 1] ? ' - ' + magnitudes[i + 1] + '<br>' : ' + ');
-        }
+        
+            div.innerHTML = 
+                            "&nbsp;&nbsp;< 9.999<i style='background: #a2fdc6'></i><br>" +
+                            "&nbsp;&nbsp;10.000 - 49.999<i style='background: #53d38e'></i><br>" + 
+                            "&nbsp;&nbsp;50.000 - 199.999<i style='background: #00b363'></i><br>" +
+                            "&nbsp;&nbsp;200.000 - 499.999<i style='background: #006828'></i><br>" +
+                            "&nbsp;&nbsp;500.000 - 999.999<i style='background: #006828'></i><br>" +
+                            "&nbsp;&nbsp;1.000.000 - 2.499.999<i style='background: #00481c'></i><br>" +
+                            "&nbsp;&nbsp;> 2.500.000<i style='background: #000000'></i><br>";
+                            
+        
 
         return div;
     };
     legend.addTo(map);
-*/
+
+
+  
