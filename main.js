@@ -75,7 +75,7 @@ $.ajax({
                         L.geoJSON(fullCountryArray[i], {
                             color: '#000000',
                             fillOpacity: 1,
-                            fillColor: '#006828',
+                            fillColor: '#008d3d',
                             weight: 1,
                         }).addTo(map).bindPopup(popup);
                     } else if (cases > 499999 && cases < 1000000) {
@@ -127,7 +127,7 @@ var legend = L.control({ position: 'bottomright' });
                             "&nbsp;&nbsp;< 9.999<i style='background: #a2fdc6'></i><br>" +
                             "&nbsp;&nbsp;10.000 - 49.999<i style='background: #53d38e'></i><br>" + 
                             "&nbsp;&nbsp;50.000 - 199.999<i style='background: #00b363'></i><br>" +
-                            "&nbsp;&nbsp;200.000 - 499.999<i style='background: #006828'></i><br>" +
+                            "&nbsp;&nbsp;200.000 - 499.999<i style='background: #008d3d'></i><br>" +
                             "&nbsp;&nbsp;500.000 - 999.999<i style='background: #006828'></i><br>" +
                             "&nbsp;&nbsp;1.000.000 - 2.499.999<i style='background: #00481c'></i><br>" +
                             "&nbsp;&nbsp;> 2.500.000<i style='background: #000000'></i><br>";
